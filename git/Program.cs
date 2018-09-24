@@ -24,7 +24,11 @@ namespace task1
             {
                 Console.WriteLine(students[i].GetSurname() + students[i].GetName() + " average raiting:  " + students[i].AvgGroupMark());
             }
+<<<<<<< HEAD
             Console.WriteLine("Average raiting by group: " + AvgGroupMark(students));
+=======
+            Console.WriteLine("Average group mark: " + AvgGroupMark(students));
+>>>>>>> parent of 94f11a9...  Average mark by group
             Console.ReadKey();
 
         }
