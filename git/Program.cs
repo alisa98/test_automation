@@ -17,7 +17,8 @@ namespace task1
             Student s2 = new Student("Иванов", "Петр", 2, new int[] { 10, 7, 5 });
             Student s3 = new Student("Петров", "Иван", 9, new int[] { 6, 8, 5 });
             Student s4 = new Student("Соловьева", "Мария", 2, new int[] { 10, 4, 5 });
-            Student[] students = new Student[] { s1, s2, s3, s4 };
+            Student s5 = new Student("Виноградова", "Ирина", 2, new int[] { 10, 4, 6 });
+            Student[] students = new Student[] { s1, s2, s3, s4, s5 };
 
             for (int i = 0; i < students.Length; i++)
             {
