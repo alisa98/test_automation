@@ -22,9 +22,9 @@ namespace task1
 
             for (int i = 0; i < students.Length; i++)
             {
-                Console.WriteLine(students[i].GetSurname() + students[i].GetName() + " average mark:  " + students[i].AvgGroupMark());
+                Console.WriteLine(students[i].GetSurname() + students[i].GetName() + " average raiting:  " + students[i].AvgGroupMark());
             }
-            Console.WriteLine("Average mark by group: " + AvgGroupMark(students));
+            Console.WriteLine("Average raiting by group: " + AvgGroupMark(students));
             Console.ReadKey();
 
         }
