@@ -24,7 +24,7 @@ namespace task1
             {
                 Console.WriteLine(students[i].GetSurname() + students[i].GetName() + " average mark:  " + students[i].AvgGroupMark());
             }
-            Console.WriteLine("Average group mark: " + AvgGroupMark(students));
+            Console.WriteLine("Average mark by group: " + AvgGroupMark(students));
             Console.ReadKey();
 
         }
