@@ -11,27 +11,53 @@ namespace UnitTestProject1
         [TestMethod]
         public void IsTrueIfTheDataValid()
         {
-                Assert.AreEqual(Triangle.IsTriangle(3,4,5));
+
+            bool expected = true;
+
+            Triangle result = new Triangle();
+
+            int actual = result.Triangle(3, 4, 5);
+            Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
         public void IsFalseIfTheDataNotValid()
         {
-            Assert.AreNotEqual(Triangle.IsTriangle(1,2,3));
+
+
+            bool expected = true;
+
+            Triangle result = new Triangle();
+
+            int actual = result.Triangle(1, 2, 3);
+            Assert.AreNotEqual(expected, actual);
+
 
         }
 
         [TestMethod]
         public void IsFalseIfTheSideIsNegative()
         {
-            Assert.AreNotEqual(Triangle.IsTriangle(3, 4, -5 ));
+
+            bool expected = true;
+
+            Triangle result = new Triangle();
+
+            int actual = result.Triangle(3, 4, -5);
+            Assert.AreNotEqual(expected, actual);
 
         }
 
         [TestMethod]
         public void IsFalseIfTwoSideAreNegative()
         {
-            Assert.AreNotEqual(Triangle.IsTriangle(3, -4, -5));
+
+            bool expected = true;
+
+            Triangle result = new Triangle();
+
+            int actual = result.Triangle(3, -4, -5);
+            Assert.AreNotEqual(expected, actual);
 
         }
 
@@ -39,43 +65,85 @@ namespace UnitTestProject1
         [TestMethod]
         public void IsTrueIfTheSidesAreEquals()
         {
-            Assert.AreEqual(Triangle.IsTriangle(4, 4, 6));
+
+            bool expected = true;
+
+            Triangle result = new Triangle();
+
+            int actual = result.Triangle(4, 4, 6);
+            Assert.AreEqual(expected, actual);
+
         }
 
         [TestMethod]
         public void IsTrueIfSidesAreEquals()
         {
-            Assert.AreEqual(Triangle.IsTriangle(4, 4, 4));
+
+            bool expected = true;
+
+            Triangle result = new Triangle();
+
+            int actual = result.Triangle(4, 4, 4);
+            Assert.AreEqual(expected, actual);
+
         }
 
         [TestMethod]
         public void IsFalseIfTtheSideIsZero()
         {
-            Assert.AreNotEqual(Triangle.IsTriangle(3, 4, 0));
+
+            bool expected = true;
+
+            Triangle result = new Triangle();
+
+            int actual = result.Triangle(3, 4, 0);
+            Assert.AreNotEqual(expected, actual);
+
+
         }
 
         [TestMethod]
         public void IsFalseIfTwoSidesAreZero()
         {
-            Assert.AreNotEqual(Triangle.IsTriangle(3, 0, 0));
+
+            bool expected = true;
+
+            Triangle result = new Triangle();
+
+            int actual = result.Triangle(3, 0, 0);
+            Assert.AreNotEqual(expected, actual);
+
         }
 
 
         [TestMethod]
         public void IsFalseIfTtheSidesAreZero()
         {
-            Assert.AreNotEqual(Triangle.IsTriangle(0, 0, 0));
+
+
+            bool expected = true;
+
+            Triangle result = new Triangle();
+
+            int actual = result.Triangle(0, 0, 0);
+            Assert.AreNotEqual(expected, actual);
+
         }
-      
+
 
 
         [TestMethod]
         public void IsFalseIfTwoSidesEqualsToTheThird()
         {
-            Assert.AreNotEqual(Triangle.IsTriangle(3, 7, 10));
+
+            bool expected = true;
+
+            Triangle result = new Triangle();
+
+            int actual = result.Triangle(3, 7, 10);
+            Assert.AreNotEqual(expected, actual);
+
         }
-
-
 
     }
 }
