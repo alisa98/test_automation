@@ -8,7 +8,6 @@ namespace lab_xUnit
     {
         public class TriangleTest
         {
-
             [Fact]
             public void IsTrueIfTheDataValid()
             {
@@ -16,23 +15,23 @@ namespace lab_xUnit
                 bool actual = Triangle.IsTriangle(3, 4, 5);
                 Assert.Equal(expected, actual);
             }
-        }
-        [Fact]
-        public void IsTrueIfTheSidesAreEquals()
-        {
-            bool expected = true;
-            bool actual = Triangle.IsTriangle(4, 4, 6);
-            Assert.Equal(expected, actual);
-        }
 
-        [Fact]
-        public void IsTrueIfSidesAreEquals()
-        {
-            bool expected = true;
-            bool actual = Triangle.IsTriangle(4, 4, 4);
-            Assert.Equal(expected, actual);
-        }
+            [Fact]
+            public void IsTrueIfTheSidesAreEquals()
+            {
+                bool expected = true;
+                bool actual = Triangle.IsTriangle(4, 4, 6);
+                Assert.Equal(expected, actual);
+            }
 
+            [Fact]
+            public void IsTrueIfSidesAreEquals()
+            {
+                bool expected = true;
+                bool actual = Triangle.IsTriangle(4, 4, 4);
+                Assert.Equal(expected, actual);
+            }
+        }
     }
 }
 
