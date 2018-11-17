@@ -4,23 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp1
+namespace lab_xUnit
 {
-   public static class Triangle
+    class Program
     {
-       
-
-           public  static bool IsTriangle(double a, double b, double c)
+        public static class Triangle
+        {
+            public static bool IsTriangle(double a, double b, double c)
             {
-              
-            
                 if (a <= 0 || b <= 0 || c <= 0)
                     return false;
-            
                 return a + b > c && a + c > b && b + c > a;
-                
+
             }
-       
-        
+        }
     }
 }
