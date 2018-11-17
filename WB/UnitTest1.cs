@@ -12,11 +12,9 @@ namespace AirlinesTestingApp
         [TestMethod]
         public void TestMethod1()
         {
-
             IWebDriver driver = new ChromeDriver();
 
             driver.Navigate().GoToUrl("https://www.turkishairlines.com/");
-            Thread.Sleep(1000);
 
             IWebElement element = driver.FindElement(By.XPath("//input[@type='text'])[2]"));           
             element.SendKeys("Москва");          
@@ -26,10 +24,6 @@ namespace AirlinesTestingApp
 
             String title = driver.Title;
             Assert.AreEqual(true, title.Contains(expectedTitle), "The information you have entered is incomplete.");
-
-
-
-
         }
     }
 }
