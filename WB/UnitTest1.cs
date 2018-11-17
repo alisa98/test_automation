@@ -19,10 +19,7 @@ namespace AirlinesTestingApp
             Thread.Sleep(1000);
 
             IWebElement element = driver.FindElement(By.XPath("//input[@type='text'])[2]"));           
-            element.SendKeys("Москва");
-
-
-            Thread.Sleep(1000);
+            element.SendKeys("Москва");          
 
             IWebElement buttun_OK = driver.FindElement(By.Id("executeSingleCitySubmit_i"));
             buttun_OK.Click();
