@@ -92,7 +92,7 @@ namespace Student
             Student Alisa = new Student("Alisa", "Utlik", 7, 8, 6, 7);
             Student Artem = new Student("Artem", "Zagorovsky", 7, 8, 9, 10);
 
-	    Student Kirill = new Student("Kirill", "Star", 8, 6, 9);	
+	    Student Ivan = new Student("Ivan", "Star", 8, 6, 9);	
 
 
             Group group2 = new Group(2);
