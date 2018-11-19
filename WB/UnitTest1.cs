@@ -1,29 +1,26 @@
 ﻿using System;
-using System.Threading;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
+using Xunit;
 
-namespace AirlinesTestingApp
+namespace XUnitTestProject2
 {
-    [TestClass]
     public class UnitTest1
     {
-        [TestMethod]
-        public void TestMethod1()
+        [Fact]
+        public void Test1()
         {
             IWebDriver driver = new ChromeDriver();
 
             driver.Navigate().GoToUrl("https://www.turkishairlines.com/");
 
-            IWebElement element = driver.FindElement(By.XPath("//input[@type='text'])[2]"));           
-            element.SendKeys("Москва");          
+            IWebElement element = driver.FindElement(By.XPath("//input[@type='text'])[2]"));
+            element.SendKeys("Москва");
 
             IWebElement buttun_OK = driver.FindElement(By.Id("executeSingleCitySubmit_i"));
             buttun_OK.Click();
 
             String title = driver.Title;
-            Assert.AreEqual(true, title.Contains(expectedTitle), "The information you have entered is incomplete.");
+            Assert.True(title.Contains(expectedTitle), "The information you have entered is incomplete.");
+
         }
     }
 }
