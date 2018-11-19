@@ -89,7 +89,7 @@ namespace Student
     {
         static void Main(string[] args)
         {
-            Student Akim = new Student("Akim", "Lyubchenko", 4, 5, 6, 7);
+            Student.Student Akim = new Student("Akim", "Lyubchenko", 4, 5, 6, 7);
             Student Artem = new Student("Artem", "Maklakov", 7, 8, 9, 10);
             Student Nikita = new Student("Nikita", "Makeychik", 3, 6, 9);
 
