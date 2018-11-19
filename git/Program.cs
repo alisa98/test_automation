@@ -12,10 +12,6 @@ namespace Program
         public List<Student> students = new List<Student>();
         public Group(int number)
         {
-            if (number < 0)
-            {
-                throw new ArgumentException("The group number must be greater than 0");
-            }
 
             Number = number;
         }
