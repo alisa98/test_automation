@@ -89,17 +89,17 @@ namespace Student
     {
         static void Main(string[] args)
         {
-            Student.Student Akim = new Student("Akim", "Lyubchenko", 4, 5, 6, 7);
-            Student Artem = new Student("Artem", "Maklakov", 7, 8, 9, 10);
-            Student Nikita = new Student("Nikita", "Makeychik", 3, 6, 9);
+            Student Alisa = new Student("Alisa", "Utlik", 7, 8, 6, 7);
+            Student Artem = new Student("Artem", "Zagorovsky", 7, 8, 9, 10);
+            Student Pavel = new Student("Pavel", "Utlik", 8, 6, 9);
 
             Group group2 = new Group(2);
-            group2.AddStudent(Akim);
+            group2.AddStudent(Alisa);
             group2.AddStudent(Artem);
-            group2.AddStudent(Nikita);
+            group2.AddStudent(Pavel);
 
             System.Console.WriteLine($"AverageScore of group 2: {group2.AverageScore()}");
-            System.Console.WriteLine($"AverageScore of Akim 2: {Akim.AverageScore()}");
+            System.Console.WriteLine($"AverageScore of Akim 2: {Alisa.AverageScore()}");
 
             System.Console.ReadKey();
         }
