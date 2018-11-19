@@ -98,7 +98,7 @@ namespace Student
             Group group2 = new Group(2);
             group2.AddStudent(Alisa);
             group2.AddStudent(Artem);
-            group2.AddStudent(Pavel);
+            group2.AddStudent(Kirill);
 
             System.Console.WriteLine($"AverageScore of group 2: {group2.AverageScore()}");
             System.Console.WriteLine($"AverageScore of Akim 2: {Alisa.AverageScore()}");
