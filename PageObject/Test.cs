@@ -8,33 +8,25 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 namespace WebDriver
 {
-    [TestFixture()]
+    [TestFixture]
     public class Test
     {
         private HomePage homePage;
         private const string errorMessage = "The information you have entered is incomplete.";
 
-        [Test()]
+        [Test]
 
         public void OneBabyOnOneAdult()
         {
             OpenHomePage();
             AddBabyAndMinusAdult();
             AssertErrorsVisible();
-        }
-
-        private void OpenHomePage()
-        {
-            var homePage = new HomePage(new ChromeDriver());
-            homePage.OpenHomePage();
-            homePage.CloseAds();
-        }
+        }    
 
         private void AddBabyAndMinusAdult()
         {
             var homePage = new HomePage(new ChromeDriver());
             homePage.OpenHomePage();
-            homePage.CloseAds();
 
             homePage.AddPassengers();
             homePage.PlusBaby();
