@@ -13,6 +13,7 @@ namespace AirlinesTestingApp.Pages
         By clickAddPassenger = By.CssSelector("span.cabin-view-type");
         By plusBaby = By.Xpath("(//span[@name='upperCount'])[2]");
         By minusAdult = By.CssSelector("span[name='lowerCount']");
+        By clickSearch = By.Xpath("//a[contains(text(),'Search')]");
         By errorsMessages = By.ClassName("messages");
 
         public HomePage(IWebDriver driver)
@@ -38,6 +39,11 @@ namespace AirlinesTestingApp.Pages
         public void MinusAdult()
         {
             driver.FindElement(minusAdult).Click();
+        }
+
+        public void ClickSearch()
+        {
+            driver.FindElement(clickSearch).Click();
         }
 
         public IWebElement GetErrorsMessages()

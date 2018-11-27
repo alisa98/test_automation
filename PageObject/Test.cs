@@ -28,9 +28,10 @@ namespace WebDriver
             var homePage = new HomePage(new ChromeDriver());
             homePage.OpenHomePage();
 
-            homePage.AddPassengers();
+            homePage.ClkickAddPassengers();
             homePage.PlusBaby();
             homePage.MinusAdult();
+            homePage.ClickSearch();
         }
 
         private void AssertErrorsVisible()
