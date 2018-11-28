@@ -21,9 +21,9 @@ namespace WebDriver
             OpenHomePage();
             AddBabyAndMinusAdult();
             AssertErrorsVisible();
-        }    
+        }
 
-        private void AddBabyAndMinusAdult()
+        public void AddBabyAndMinusAdult()
         {
             var homePage = new HomePage(new ChromeDriver());
             homePage.OpenHomePage();
@@ -34,7 +34,7 @@ namespace WebDriver
             homePage.ClickSearch();
         }
 
-        private void AssertErrorsVisible()
+        public void AssertErrorsVisible()
         {
             var messageText = homePage.GetErrorsMessages().Text;
             Assert.AreEqual(errorMessage, messageText);
