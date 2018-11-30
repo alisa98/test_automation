@@ -39,7 +39,7 @@ namespace WebDriver
         public void AssertErrorsVisible()
         {
             var messageText = homePage.GetErrorsMessages().Text;
-            Assert.AreEqual(errorMessage, messageText);
+            Assert.AreEqual(ErrorMessage, messageText);
         }
     }
 }
