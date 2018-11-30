@@ -21,12 +21,15 @@ namespace WebDriver
             AddBabyAndMinusAdult();
             AssertErrorsVisible();
         }
+        
+          private void OpenHomePage()
+        {
+            var homePage = new HomePage(new ChromeDriver());
+            homePage.OpenHomePage();     
+        }
 
         public void AddBabyAndMinusAdult()
         {
-            var homePage = new HomePage(new ChromeDriver());
-            homePage.OpenHomePage();
-
             homePage.ClkickAddPassengers();
             homePage.PlusBaby();
             homePage.MinusAdult();
