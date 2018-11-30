@@ -12,10 +12,9 @@ namespace WebDriver
     public class Test
     {
         private HomePage homePage;
-        private const string errorMessage = "The information you have entered is incomplete.";
+        private const string ErrorMessage = "The information you have entered is incomplete.";
 
         [Test]
-
         public void OneBabyOnOneAdult()
         {
             OpenHomePage();
