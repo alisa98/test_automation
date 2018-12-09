@@ -16,20 +16,20 @@ namespace WebDriver
 
         [Test]
 
-        public void OneBabyOnOneAdult()
+        public void OneChildOnOneAdult()
         {
             OpenHomePage();
-            AddBabyAndMinusAdult();
+            AddChildAndMinusAdult();
             AssertErrorsVisible();
         }
 
-        public void AddBabyAndMinusAdult()
+        public void AddChildAndMinusAdult()
         {
             var homePage = new HomePage(new ChromeDriver());
             homePage.OpenHomePage();
 
             homePage.ClkickAddPassengers();
-            homePage.PlusBaby();
+            homePage.PlusChild();
             homePage.MinusAdult();
             homePage.ClickSearch();
         }

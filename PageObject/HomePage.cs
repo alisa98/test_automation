@@ -11,7 +11,7 @@ namespace AirlinesTestingApp.Pages
         private const string url = "https://www.turkishairlines.com/";
 
         By clickAddPassenger = By.CssSelector("span.cabin-view-type");
-        By plusBaby = By.Xpath("(//span[@name='upperCount'])[2]");
+        By plusChild = By.Xpath("(//span[@name='upperCount'])[2]");
         By minusAdult = By.CssSelector("span[name='lowerCount']");
         By clickSearch = By.Xpath("//a[contains(text(),'Search')]");
         By errorsMessages = By.ClassName("messages");
@@ -31,9 +31,9 @@ namespace AirlinesTestingApp.Pages
             driver.FindElement(clickAddPassenger).Click();
         }
 
-        public void PlusBaby()
+        public void PlusChild()
         {
-            driver.FindElement(plusBaby).Click();
+            driver.FindElement(plusChild).Click();
         }
 
         public void MinusAdult()
