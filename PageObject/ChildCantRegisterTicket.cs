@@ -9,7 +9,7 @@ using OpenQA.Selenium.Chrome;
 namespace WebDriver
 {
     [TestFixture]
-    public class Test
+    public class ChildCantRegisterTicket
     {
         private HomePage homePage;
         private const string ErrorMessage = "The information you have entered is incomplete.";
