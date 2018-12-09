@@ -15,21 +15,19 @@ namespace WebDriver
         private const string ErrorMessage = "The information you have entered is incomplete.";
 
         [Test]
+
         public void OneBabyOnOneAdult()
         {
             OpenHomePage();
             AddBabyAndMinusAdult();
             AssertErrorsVisible();
         }
-        
-          private void OpenHomePage()
-        {
-            var homePage = new HomePage(new ChromeDriver());
-            homePage.OpenHomePage();     
-        }
 
         public void AddBabyAndMinusAdult()
         {
+            var homePage = new HomePage(new ChromeDriver());
+            homePage.OpenHomePage();
+
             homePage.ClkickAddPassengers();
             homePage.PlusBaby();
             homePage.MinusAdult();
