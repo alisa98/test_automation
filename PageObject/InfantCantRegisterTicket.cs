@@ -9,26 +9,26 @@ using OpenQA.Selenium.Chrome;
 namespace WebDriver
 {
     [TestFixture]
-    public class ChildCantRegisterTicket
+    public class InfantCantRegisterTicket
     {
         private HomePage homePage;
         private const string ErrorMessage = "The information you have entered is incomplete.";
 
         [Test]
-        public void OneChildOnOneAdult()
+        public void OneInfantOnOneAdult()
         {
             OpenHomePage();
-            AddChildAndMinusAdult();
+            AddInfantAndMinusAdult();
             AssertErrorsVisible();
         }
 
-        public void AddChildAndMinusAdult()
+        public void AddInfantAndMinusAdult()
         {
             var homePage = new HomePage(new ChromeDriver());
             homePage.OpenHomePage();
 
             homePage.ClkickAddPassengers();
-            homePage.PlusChild();
+            homePage.PlusInfant();
             homePage.MinusAdult();
             homePage.ClickSearch();
         }

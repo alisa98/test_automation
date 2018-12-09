@@ -36,6 +36,11 @@ namespace AirlinesTestingApp.Pages
             driver.FindElement(plusChild).Click();
         }
 
+        public void PlusInfant()
+        {
+            driver.FindElement(plusInfant).Click();
+        }
+
         public void MinusAdult()
         {
             driver.FindElement(minusAdult).Click();
