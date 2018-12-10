@@ -3,107 +3,99 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
-namespace Student
+ 
+namespace Program
 {
-    public class Group
-    {     
-        public int Number { get; private set; }    
-        public List<Student> students = new List<Student>();
-        public Group(int number)
+    class FordFulkerson
+    {
+        int V = 6;    //Number of vertices in graph
+
+
+        bool BFS(int[][] rGraph, int s, int t, int[] parent) { 
+           bool[] visited = new bool [V] ;
+        for (int i = 0; i<V; ++i)
+            visited[i] = false;
+        
+        LinkedList<int> queue = new LinkedList<int>();
+        queue.AddLast(s);
+        visited[s] = true;
+        parent[s] = -1;
+
+        
+        while (queue.Count != 0)
         {
-            if (number < 0)
+            int u = queue.Remove();
+
+            for (int v = 0; v<V; v++)
             {
-                throw new ArgumentException("The group number must be greater than 0");
+                if (visited[v] == false && rGraph[u][v] > 0)
+                {
+                    queue.AddLast(v);
+                    parent[v] = u;
+                    visited[v] = true;
+                }
+}
+        }
+
+  
+        return (visited[t] == true);
+        }
+
+        int FordFukerson(int[,] graph, int s, int t)
+        {
+            int u, v;
+
+
+            int[][] rGraph = new int[V][V];
+ 
+        for (u = 0; u<V; u++)
+            for (v = 0; v<V; v++)
+                rGraph[u][v] = graph[u][v];
+ 
+        int[] parent = new int[V];
+
+        int max_flow = 0;  // There is no flow initially
+ 
+      
+        while (BFS(rGraph, s, t, parent))
+        {
+          
+            int path_flow = int.MaxValue;
+            for (v=t; v!=s; v=parent[v])
+            {
+                u = parent[v];
+                path_flow = Math.Min(path_flow, rGraph[u][v]);
+            }
+ 
+            
+            for (v=t; v != s; v=parent[v])
+            {
+                u = parent[v];
+                rGraph[u][v] -= path_flow;
+                rGraph[v][u] += path_flow;
             }
 
-            Number = number;
+                max_flow += path_flow;
+        }
+       
+        return max_flow;
         }
     
-        public Group(int number, params Student[] students) : this(number)
+        public static void Main()
         {
-            for (int i = 0; i < students.Length; i++)
-            {
-                if (students[i] != null)
-                {
-                    this.students.Add(students[i]);
-                }
-            }
-        }
-
-       
-        public double AverageScore()
-        {
-            double avScore = 0;
-            foreach (var student in students)
-            {
-                avScore += student.AverageScore();
-            }
-            return avScore / students.Count;
-        }
-
-        public void AddStudent(Student student)
-        {
-            students.Add(student);
-        }
-    }
-    public class Student
-    {     
-        public string FirstName { get; private set; }       
-        public string LastName { get; private set; }      
-        private List<int> notes = new List<int>();   
-        public Student(string firstName, string lastName)
-        {
-            if (string.IsNullOrEmpty(firstName))
-            {
-                throw new ArgumentNullException($"Invalid name {firstName}");
-            }
-
-            if (string.IsNullOrEmpty(lastName))
-            {
-                throw new ArgumentNullException($"Invalid name {lastName}");
-            }
-
-            FirstName = firstName;
-            LastName = lastName;
-        }      
-        public Student(string firstName, string lastName, params int[] notes) : this(firstName, lastName)
-        {
-            for (int i = 0; i < notes.Length; i++)
-            {
-                if (notes[i] < 1 && notes[i] > 10)
-                {
-                    throw new ArgumentException($"Invalid note {notes[i]}");
-                }
-
-                this.notes.Add(notes[i]);
-            }
-        }    
-        public double AverageScore()
-            => notes.Average();
-
-        public void AddNote(int note)
-            => notes.Add(note);
-    }
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            Student Alisa = new Student("Alisa", "Utlik", 7, 8, 6, 7);
-            Student Artem = new Student("Artem", "Zagorovsky", 7, 8, 9, 10);
-
-	    Student Ivan = new Student("Ivan", "Star", 8, 6, 9);	
-
-
-            Group group2 = new Group(2);
-            group2.AddStudent(Alisa);
-            group2.AddStudent(Artem);
-            group2.AddStudent(Kirill);
-
-            System.Console.WriteLine($"AverageScore of group 2: {group2.AverageScore()}");
-            System.Console.WriteLine($"AverageScore of Akim 2: {Alisa.AverageScore()}");
-
-            System.Console.ReadKey();
+        int[][] graph =new int[][] { {0, 16, 13, 0, 0, 0},
+                                     {0, 0, 10, 12, 0, 0},
+                                     {0, 4, 0, 0, 14, 0},
+                                     {0, 0, 9, 0, 0, 20},
+                                     {0, 0, 0, 7, 0, 4},
+                                     {0, 0, 0, 0, 0, 0}
+                                   };
+            FordFulkerson m = new FordFulkerson();
+            Console.Write("The maximum possible flow is " + m.FordFulkerson(graph,0,5));
+            Console.ReadKey();
         }
     }
 }
+
+
+
