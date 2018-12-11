@@ -9,16 +9,17 @@ using OpenQA.Selenium.Chrome;
 namespace WebDriver
 {
     [TestFixture]
-    public class DepartureDateIsNotSelected
+    public class MultiCityAllFieldsAreFilled
     {
         private HomePage homePage;
-        private const string ErrorMessage = "Please select a date for your flight. Unless your flight is round trip, please click “one way”.";
+        private const string ErrorMessage = "Please select a date for your flight.";
 
         [Test]
         public void OneInfantOnOneAdult()
         {
             OpenHomePage();
-            Inputarrival();
+            MultiCity();
+            InputDeparture();       
             AssertErrorsVisible();
         }
         private void OpenHomePage()
@@ -26,14 +27,18 @@ namespace WebDriver
             var homePage = new HomePage(new ChromeDriver());
             homePage.OpenHomePage();
         }
+        public void MultiCity()
+        {
+            homePage.MultiCity();
+        }
 
         private void InputDeparture()
         {
             homePage.InputArrival();
             homePage.SendKeys("Kiev");
             homePage.ClickSearch();
-        }
-    
+        }      
+
         public void AssertErrorsVisible()
         {
             var messageText = homePage.GetErrorsMessages().Text;

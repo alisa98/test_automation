@@ -9,45 +9,35 @@ using OpenQA.Selenium.Chrome;
 namespace WebDriver
 {
     [TestFixture]
-    public class NoMmoreThan6FlightsCanBeAdded
+    public class MaximumNumberOfPassengers
     {
         private HomePage homePage;
-        
+        private const string ErrorMessage = "The maximum number of passengers, excluding infants, that can be selected is 9 for domestic flights, 7 for international flights, and 5 for award tickets.";
+
         [Test]
         public void OneInfantOnOneAdult()
         {
             OpenHomePage();
-            MultiCity();
-            AddRoute();
+            AddAdult();
             AssertErrorsVisible();
         }
-
         private void OpenHomePage()
         {
             var homePage = new HomePage(new ChromeDriver());
             homePage.OpenHomePage();
         }
 
-        private void MultiCity()
+        public void AddAdult()
         {
-            homePage.MultiCity();         
+            homePage.ClkickAddPassengers();
+            homePage.PlusAdult(8);
+            homePage.ClickSearch();
         }
-
-        private void AddRoute()
-        {
-            homePage.AddRoute(4);
-        }
-
-        private bool IsElementPresent()
-        {
-          return homePage.FindElement(addRoute).Count()>0;
-        }
-
-
 
         public void AssertErrorsVisible()
         {
-            Assert.IsFalse(IsElementPresent());
+            var messageText = homePage.GetErrorsMessages().Text;
+            Assert.AreEqual(ErrorMessage, messageText);
         }
     }
 }

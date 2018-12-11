@@ -9,16 +9,16 @@ using OpenQA.Selenium.Chrome;
 namespace WebDriver
 {
     [TestFixture]
-    public class DepartureDateIsNotSelected
+    public class NoMoreChildrenThanAdults
     {
         private HomePage homePage;
-        private const string ErrorMessage = "Please select a date for your flight. Unless your flight is round trip, please click “one way”.";
+        private const string ErrorMessage = "All infant passengers must be accompanied by at least one adult for reservations made online (website/mobile applications).";
 
         [Test]
         public void OneInfantOnOneAdult()
         {
             OpenHomePage();
-            Inputarrival();
+            AddInfantAddAdult();
             AssertErrorsVisible();
         }
         private void OpenHomePage()
@@ -27,13 +27,14 @@ namespace WebDriver
             homePage.OpenHomePage();
         }
 
-        private void InputDeparture()
+        public void AddInfantAddAdult()
         {
-            homePage.InputArrival();
-            homePage.SendKeys("Kiev");
+            homePage.ClkickAddPassengers();
+            homePage.PlusInfant(4);
+            homePage.PlusAdult(2);
             homePage.ClickSearch();
         }
-    
+
         public void AssertErrorsVisible()
         {
             var messageText = homePage.GetErrorsMessages().Text;
