@@ -3,7 +3,7 @@ using OpenQA.Selenium.Support.UI;
 using System;
 using System.Threading;
 
-namespace AirlinesTestingApp.Pages
+namespace PageObject.Pages
 {
     public class HomePage
     {
