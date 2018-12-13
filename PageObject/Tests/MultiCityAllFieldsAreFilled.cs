@@ -6,7 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-namespace WebDriver
+
+namespace PageObject.Tests
 {
     [TestFixture]
     public class MultiCityAllFieldsAreFilled
@@ -15,7 +16,7 @@ namespace WebDriver
         private const string ErrorMessage = "Please select a date for your flight.";
 
         [Test]
-        public void OneInfantOnOneAdult()
+        public void MultiCityAllFieldsAreFilled()
         {
             OpenHomePage();
             MultiCity();

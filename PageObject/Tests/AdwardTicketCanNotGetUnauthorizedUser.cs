@@ -6,7 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-namespace WebDriver
+
+namespace PageObject.Tests
 {
     [TestFixture]
     public class AdwardTicketCanNotGetUnauthorizedUser
@@ -15,7 +16,7 @@ namespace WebDriver
         private const string ErrorMessage = "Sign in";
 
         [Test]
-        public void OneInfantOnOneAdult()
+        public void AdwardTicketCanNotGetUnauthorizedUser()
         {
             OpenHomePage();
             AdwardTicket();

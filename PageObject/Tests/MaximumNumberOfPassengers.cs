@@ -6,7 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-namespace WebDriver
+
+namespace PageObject.Tests
 {
     [TestFixture]
     public class MaximumNumberOfPassengers
@@ -15,7 +16,7 @@ namespace WebDriver
         private const string ErrorMessage = "The maximum number of passengers, excluding infants, that can be selected is 9 for domestic flights, 7 for international flights, and 5 for award tickets.";
 
         [Test]
-        public void OneInfantOnOneAdult()
+        public void MaximumNumberOfPassengers()
         {
             OpenHomePage();
             AddAdult();

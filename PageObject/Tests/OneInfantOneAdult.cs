@@ -6,7 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-namespace WebDriver
+
+namespace PageObject.Tests
 {
     [TestFixture]
     public class OneInfantOneAdult
@@ -15,7 +16,7 @@ namespace WebDriver
         private const string ErrorMessage = "All infant passengers must be accompanied by at least one adult for reservations made online (website/mobile applications).";
 
         [Test]
-        public void OneInfantOnOneAdult()
+        public void OneInfantOneAdult()
         {
             OpenHomePage();
             AddInfant();

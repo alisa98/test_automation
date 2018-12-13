@@ -6,7 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-namespace WebDriver
+
+namespace PageObject.Tests
 {
     [TestFixture]
     public class ChildCantRegisterTicket
@@ -15,7 +16,7 @@ namespace WebDriver
         private const string ErrorMessage = "The information you have entered is incomplete.";
 
         [Test]
-        public void OneChildOnOneAdult()
+        public void ChildCantRegisterTicket()
         {
             OpenHomePage();
             AddChildAndMinusAdult();

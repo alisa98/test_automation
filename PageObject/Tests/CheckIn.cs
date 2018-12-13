@@ -6,7 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-namespace WebDriver
+
+namespace PageObject.Tests
 {
     [TestFixture]
     public class CheckIn
@@ -15,10 +16,10 @@ namespace WebDriver
         private const string ErrorMessage = "Your eTicket number is incomplete or incorrect. Please enter the 13-digit numerical code which appears in the “Ticket number” box on your ticket. If you do not know your eTicket number, you can leave this field blank and enter your reservation code (PNR).";
 
         [Test]
-        public void OneInfantOnOneAdult()
+        public void CheckIn()
         {
             OpenHomePage();
-            CheckIn();
+            ClickCheckIn();
             TicketNumber();    
             AssertErrorsVisible();
         }
@@ -27,7 +28,13 @@ namespace WebDriver
             var homePage = new HomePage(new ChromeDriver());
             homePage.OpenHomePage();
         }
-   
+
+        private void ClickCheckIn()
+        {
+            homePage.CheckIn();
+        }
+
+
         private void TicketNumber()
         {
             homePage.TicketNumber();
