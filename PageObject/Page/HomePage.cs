@@ -10,7 +10,7 @@ namespace AirlinesTestingApp.Pages
         private IWebDriver driver;
         private const string url = "https://www.turkishairlines.com/";
 
-        By clickAddPassenger = By.Xpath("//span[@id='personCounter']");
+        By clickAddPassenger = By.Id("personCounter");
         By plusChild = By.Xpath("(//span[@name='upperCount'])[2]");
         By plusInfant= By.Xpath("(//span[@name='upperCount'])[3]");
         By plusAdult = By.Xpath("//span[@name='upperCount']");
@@ -20,10 +20,9 @@ namespace AirlinesTestingApp.Pages
         By inputArrival = By.Xpath("//input[@type='text'])[2]"); 
         By awardTicket = By.Xpath("//a[contains(text(),'Award ticket - Buy a ticket with Miles')]");
         By multiCity = By.Xpath(" //a[contains(text(),'Multi-city')]");
-
-
-
-
+        By checkIn = By.CssSelector("h2.tk-booker-tab-btn-head");
+        By ticketNumber = By.Id("ticketNo");
+       
         public HomePage(IWebDriver driver)
         {
             this.driver = driver;
@@ -85,6 +84,15 @@ namespace AirlinesTestingApp.Pages
             driver.FindElement(multiCity).Click();
         }
 
+        public void CheckIn()
+        {
+            driver.FindElement(checkIn).Click();
+        }
+
+        public void TicketNumber()
+        {
+            driver.FindElement(ticketNumber).Click();
+        }
 
         public IWebElement GetErrorsMessages()
         {
