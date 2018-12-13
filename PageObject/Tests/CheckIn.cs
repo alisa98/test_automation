@@ -18,9 +18,8 @@ namespace WebDriver
         public void OneInfantOnOneAdult()
         {
             OpenHomePage();
-            TicketNumber();
-            PassengerSurname();
-            ClickButtonNext();
+            CheckIn();
+            TicketNumber();    
             AssertErrorsVisible();
         }
         private void OpenHomePage()
@@ -33,18 +32,7 @@ namespace WebDriver
         {
             homePage.TicketNumber();
             homePage.SendKeys("123456789");
-        }
-
-        private void PassengerSurname()
-        {
-            homePage.PassengerSurname();
-            homePage.SendKeys("UTLIK");
-        }
-
-        private void ClickButtonNext()
-        {
-            homePage.ClickButtonNext();         
-        }
+        }       
 
         public void AssertErrorsVisible()
         {
