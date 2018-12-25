@@ -76,7 +76,7 @@ public class IndexPage {
     }
 
     public void pickOneWayTicketOption() {
-        new WebDriverWait(driver, 5).until(ExpectedConditions.visibilityOf(oneWayRadio));
+        new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOf(oneWayRadio));
         oneWayRadio.click();
     }
 
@@ -85,11 +85,11 @@ public class IndexPage {
     }
 
     public void setDestination(String code, String airport) {
-        new WebDriverWait(driver, 5).until(ExpectedConditions.visibilityOf(destinationButton));
+        new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOf(destinationButton));
         destinationButton.click();
-        new WebDriverWait(driver, 5).until(ExpectedConditions.visibilityOf(destinationInput));
+        new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOf(destinationInput));
         destinationInput.sendKeys(code);
-        new WebDriverWait(driver, 5).until(ExpectedConditions.elementToBeClickable(
+        new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(
                 driver.findElement(By.xpath("//*[@id='destinationSelector']/div/div/div/ul/li[2]/a"))));
         driver.findElement(By.xpath("//*[@id='destinationSelector']/div/div/div/ul/li[2]/a")).click();
     }
@@ -103,7 +103,7 @@ public class IndexPage {
     }
 
     public boolean isSameDepartureAndArrivalPlaceErrorVisible() {
-        new WebDriverWait(driver, 5).until(ExpectedConditions.visibilityOf(sameDepartureAndArrivalPlaceError));
+        new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOf(sameDepartureAndArrivalPlaceError));
         return sameDepartureAndArrivalPlaceError.isDisplayed();
     }
 
@@ -148,7 +148,7 @@ public class IndexPage {
     }
 
     public void openPasangersChoice() {
-        new WebDriverWait(driver, 5).until(ExpectedConditions.elementToBeClickable(personChoice));
+        new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(personChoice));
         personChoice.click();
     }
 
@@ -156,12 +156,12 @@ public class IndexPage {
         if (driver.findElements(By.xpath("//*[@id='choosePerson']/div")).size() == 0) {
             openPasangersChoice();
         }
-        new WebDriverWait(driver, 5).until(ExpectedConditions.visibilityOf(warning));
+        new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOf(warning));
         return warning.isDisplayed();
     }
 
     public boolean isMultipleCityInputVisible() {
-        new WebDriverWait(driver, 5).until(ExpectedConditions.visibilityOf(multipleCityInput));
+        new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOf(multipleCityInput));
         return multipleCityInput.isDisplayed();
     }
 
@@ -170,12 +170,12 @@ public class IndexPage {
     }
 
     public void pickToUseBonusMiles() {
-        new WebDriverWait(driver, 5).until(ExpectedConditions.visibilityOf(bonusMilesButton));
+        new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOf(bonusMilesButton));
         bonusMilesButton.click();
     }
 
     public boolean isAsksForAccount() {
-        new WebDriverWait(driver, 5).until(ExpectedConditions.visibilityOf(signUpForm));
+        new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOf(signUpForm));
         return signUpForm.isDisplayed();
     }
 }
